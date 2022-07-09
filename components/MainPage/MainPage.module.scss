@@ -1,0 +1,28 @@
+.mainContainer {
+  padding: 4rem 3rem;
+
+  .stars {
+    background: black
+      url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: -1;
+    width: 100%;
+  }
+  .cardGroup {
+    padding-top: 3rem;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+  }
+  .title {
+    padding-bottom: 3rem;
+  }
+}
