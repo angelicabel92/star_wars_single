@@ -1,0 +1,42 @@
+.CharacterDetail {
+  padding: 4rem 3rem;
+
+  .stars {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png),
+      repeat, linear-gradient(90deg, rgba(7, 11, 16, 1) 0%, rgb(8 12 17) 91%);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    &Width {
+      @extend .group;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .iconMovie {
+    margin-right: 0.7rem;
+  }
+
+  .filmTitle {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 2rem 1rem;
+
+    .group {
+      width: 100%;
+    }
+  }
+}

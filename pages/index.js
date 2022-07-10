@@ -7,8 +7,9 @@ const theme = createTheme({
   theme: {
     colors: {
       starWarsColor: "#FBCF3A",
+      starWarsColorLow: "#ffd44270",
       starWarsGradient:
-        "90deg, rgba(251,229,58,1) 0%, rgba(251,207,58,1) 57%, rgba(251,158,58,1) 83%",
+        "90deg,rgb(251 229 58 / 51%) 0%, rgba(251,207,58,1) 57%, rgba(251,158,58,1) 83%",
     },
   },
 });

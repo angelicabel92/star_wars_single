@@ -9,12 +9,23 @@ import {
   Image,
   Button,
   Loading,
+  Link,
 } from "@nextui-org/react";
 import CardDetail from "../CardDetail/CardDetail";
+import { useRouter } from "next/router";
 
 const MainPage = () => {
   const { characters, size, setSize, isLoadingMore, isReachedEnd } =
     useCharacters();
+  const router = useRouter();
+
+  const handleOnClick = (key) => {
+    key = key + 1;
+    router.push({
+      pathname: "/character/[slug]",
+      query: { slug: key },
+    });
+  };
 
   return (
     <Grid.Container
@@ -23,10 +34,10 @@ const MainPage = () => {
     >
       <div className={styles.stars}></div>
       <Row>
-        <Image alt="logo-star-wars" src="/images/star_wars_2.svg" width={300} />
+        <Image alt="logo-star-wars" src="/images/star_wars_2.svg" width={400} />
       </Row>
       <Row justify="center">
-        <Text css={{ color: "$starWarsColor" }} className={styles.title} h3>
+        <Text css={{ color: "$white" }} className={styles.title} h3>
           CHARACTERS
         </Text>
       </Row>
@@ -35,19 +46,35 @@ const MainPage = () => {
           {characters?.map((character, key) => (
             <Grid
               key={key}
-              xs={6}
               sm={3}
+              xs={12}
               alignItems="center"
               justify="space-between"
             >
-              <Card css={{ margin: "$6" }}>
+              <Card
+                isHoverable
+                isPressable
+                onClick={() => handleOnClick(key)}
+                css={{
+                  margin: "$6",
+                  borderRadius: "5px",
+                  border: "2px solid $starWarsColorLow",
+                  background: "rgb(8 8 12 / 91%)",
+                }}
+              >
                 <Card.Header>
-                  <Text h4>{character.name}</Text>
+                  <Text
+                    css={{
+                      textGradient: "$starWarsGradient",
+                    }}
+                    h3
+                  >
+                    {character.name}
+                  </Text>
                 </Card.Header>
-                <Card.Divider />
-                <Card.Body>
+                <Card.Footer>
                   <CardDetail character={character} />
-                </Card.Body>
+                </Card.Footer>
               </Card>
             </Grid>
           ))}

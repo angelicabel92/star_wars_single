@@ -1,9 +1,16 @@
 .cardDetailWrapper {
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
+  padding-top: 1rem;
 
   .text {
     margin: 0;
+  }
+
+  .films {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.08rem 0.45rem;
+    font-size: 0.8rem;
   }
 }

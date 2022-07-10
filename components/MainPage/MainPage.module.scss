@@ -2,15 +2,15 @@
   padding: 4rem 3rem;
 
   .stars {
-    background: black
-      url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png),
+    repeat,
+    linear-gradient(90deg, rgba(7,11,16,1) 0%, rgb(8 12 17) 91%);
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     display: block;
-    z-index: -1;
     width: 100%;
   }
   .cardGroup {
@@ -24,5 +24,9 @@
   }
   .title {
     padding-bottom: 3rem;
+  }
+
+  @media screen and (max-width: 600px)  {
+    padding: 2rem 1rem;
   }
 }
