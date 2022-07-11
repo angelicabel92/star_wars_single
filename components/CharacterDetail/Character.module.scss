@@ -13,15 +13,12 @@
     width: 100%;
   }
 
-  .group {
+  .groupWidth {
     display: flex;
     align-items: center;
     margin-right: 2rem;
-    &Width {
-      @extend .group;
-      width: 100%;
-      justify-content: center;
-    }
+    width: 100%;
+    justify-content: center;
   }
 
   .iconMovie {
@@ -34,9 +31,5 @@
 
   @media screen and (max-width: 600px) {
     padding: 2rem 1rem;
-
-    .group {
-      width: 100%;
-    }
   }
 }

@@ -9,7 +9,6 @@ import {
   Image,
   Button,
   Loading,
-  Link,
 } from "@nextui-org/react";
 import CardDetail from "../CardDetail/CardDetail";
 import { useRouter } from "next/router";
@@ -20,10 +19,11 @@ const MainPage = () => {
   const router = useRouter();
 
   const handleOnClick = (key) => {
-    key = key + 1;
+    // function for error in API 17 character
+    const id = characters[key].url?.split('/people/')[1].split('/')[0];
     router.push({
       pathname: "/character/[slug]",
-      query: { slug: key },
+      query: { slug: id },
     });
   };
 

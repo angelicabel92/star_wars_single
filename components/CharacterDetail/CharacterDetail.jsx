@@ -5,6 +5,7 @@ import { VscArrowSmallLeft } from "react-icons/vsc";
 import { BiCameraMovie } from "react-icons/bi";
 import { fetcher } from "../../utils/utils-request";
 import useSWR from "swr";
+import GroupText from "../GroupText/GroupText";
 
 const CharacterDetail = ({ character, router }) => {
   const { data: films, error } = useSWR(character.films, fetcher, {
@@ -25,6 +26,7 @@ const CharacterDetail = ({ character, router }) => {
         icon={<VscArrowSmallLeft />}
         light
         auto
+        data-testid='character-detail-back-button'
         onClick={() => router.back()}
       >
         Go back
@@ -40,7 +42,7 @@ const CharacterDetail = ({ character, router }) => {
         }}
       >
         <Card.Header css={{ justifyContent: "center" }}>
-          <Text
+          <Text data-testid='character-name'
             css={{
               textGradient: "$starWarsGradient",
             }}
@@ -56,48 +58,13 @@ const CharacterDetail = ({ character, router }) => {
             justifyContent: "space-around",
           }}
         >
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Height
-            </Text>
-            <span>{character.height}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Gender
-            </Text>
-            <span>{character.gender}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Mass
-            </Text>
-            <span>{character.mass}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Hair color
-            </Text>
-            <span>{character.hair_color}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Eye color
-            </Text>
-            <span>{character.eye_color}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Skin color
-            </Text>
-            <span>{character.skin_color}</span>
-          </div>
-          <div className={styles.group}>
-            <Text css={{ marginRight: "$5" }} h5>
-              Birth year
-            </Text>
-            <span>{character.birth_year}</span>
-          </div>
+          <GroupText title='Height' text={character.height} idTest='height-text' />
+          <GroupText title='Gender' text={character.gender} idTest='height-gender' />
+          <GroupText title='Mass' text={character.mass} idTest='height-mass' />
+          <GroupText title='Hair color' text={character.hair_color} idTest='height-hair' />
+          <GroupText title='Eye color' text={character.eye_color} idTest='height-eye' />
+          <GroupText title='Skin color' text={character.skin_color} idTest='height-skin' />
+          <GroupText title='Birth year' text={character.birth_year} idTest='height-birth' />
         </Card.Body>
         <Card.Footer css={{ margin: "$10" }}>
           <div className={styles.groupWidth}>
